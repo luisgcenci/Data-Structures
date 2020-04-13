@@ -1,0 +1,5 @@
+// task-name deadline duration
+build-project 1220 20
+unit-tests 1230 2300
+integration-test 1359 300
+regression-test 1410 20
