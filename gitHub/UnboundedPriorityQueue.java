@@ -1,27 +1,27 @@
 import java.util.*;
 
-public class UnboundedPriorityQueue<T> {
+public class UnboundedPriorityQueue<T extends Comparable> {
 	
     //Using MinHeap to handle priorityQueue 
-    private MinHeap <Task> unboundedPriorityQueue;
+    private MinHeap <T> unboundedPriorityQueue;
 
     public UnboundedPriorityQueue(){
         //create a new queue
-        unboundedPriorityQueue = new MinHeap<Task>();
+        unboundedPriorityQueue = new MinHeap<T>();
     }
 
 	public UnboundedPriorityQueue(int initSize){
         //create a new queue of a specified size
-        unboundedPriorityQueue = new MinHeap<Task>(initSize);
+        unboundedPriorityQueue = new MinHeap<T>(initSize);
     }
 
 	//Add an element to the queue
-    public void enqueue(Task task){
+    public void enqueue(T task){
         unboundedPriorityQueue.insert(task);
     }
 	
 	//Remove an element from the queue and return it
-    public Task dequeue(){
+    public T dequeue(){
 		return unboundedPriorityQueue.remove();
     }
 	
@@ -29,8 +29,9 @@ public class UnboundedPriorityQueue<T> {
 	public boolean isEmpty(){
         return unboundedPriorityQueue.isEmpty();
     }
-
-    public String toString(){
-        return unboundedPriorityQueue.toString();
-    }
+	
+	//Return the tasks of the priorityQueue in string form.
+	public String toString(){
+		return unboundedPriorityQueue.toString();
+	}
 }

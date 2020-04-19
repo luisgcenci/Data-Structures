@@ -91,14 +91,15 @@ public class MinHeap<T extends Comparable> {
 		return false;
 	}*/
 	
+	//Return the tasks of the heap in string form with a new line seperator between
+	//tasks.
 	public String toString(){
-		String outputString = "";
-			//Checks every parent, and prints its children. The last parent being the 
-			//last element divided by 2
-			for (index = 0; index <= ((size-1)/2); index++) { 
-				outputString = outputString + ("\nParent:" + heap.get(index) + " Children: " + heap.get(2*index) + " " + heap.get((2*index)+1)); 
-			}
-		return outputString;
+		String formatOutput = "";
+		for (index = 0; index < size; index++){
+			formatOutput = formatOutput + heap.get(index).toString() + "\n";
+		}
+		
+		return formatOutput;
 	}
 }
     
