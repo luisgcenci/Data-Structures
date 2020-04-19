@@ -29,4 +29,8 @@ public class UnboundedPriorityQueue<T> {
 	public boolean isEmpty(){
         return unboundedPriorityQueue.isEmpty();
     }
+
+    public String toString(){
+        return unboundedPriorityQueue.toString();
+    }
 }
